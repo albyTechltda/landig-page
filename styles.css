@@ -1,16 +1,17 @@
+/* Fonte personalizada para a logo */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 * {
     user-select: none;
+    box-sizing: border-box;
 }
-
-
-
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000;
@@ -22,43 +23,88 @@ header {
     top: 0;
     width: 100%;
     background-color: #1a1a1a;
-    padding: 20px;
-    text-align: center;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 1000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra mais suave e grande */
+    border-bottom: 2px solid #d4af37; /* Linha fina de destaque abaixo do cabeçalho */
 }
 
-header a {
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
     color: #d4af37;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 20px;
     font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+nav a:hover {
+    color: #f4b400;
+    transform: translateY(-3px); /* Levanta um pouco o link quando o mouse passa */
+}
+
+header .logo {
+    color: #d4af37;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+header .logo:hover {
+    transform: scale(1.1); /* Aumenta um pouco a logo ao passar o mouse */
+    color: #f4b400;
+}
+
+/* Hero Section */
 .hero {
     text-align: center;
     padding: 120px 20px 50px;
     background: url('hero-image.jpg') no-repeat center center/cover;
     color: #fff;
+    background-size: cover;
+    background-position: center center;
 }
 
 .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 3em;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
 }
 
 .hero button {
     background-color: #d4af37;
     color: #000;
     border: none;
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 12px 25px;
+    font-size: 20px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.hero button:hover {
+    background-color: #f4b400;
+    transform: translateY(-2px); /* Elevação no hover */
+}
+
+/* Cards de Acompanhantes */
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 180px 20px 20px;
     justify-items: center;
@@ -67,14 +113,21 @@ header a {
 
 .card {
     background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 15px;
     color: #d4af37;
     width: 300px;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Levanta o card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Sombra maior no hover */
 }
 
 .card img {
@@ -82,10 +135,16 @@ header a {
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05); /* Efeito de zoom na imagem */
 }
 
 .card h3 {
     margin: 15px 0;
+    font-size: 1.5em;
 }
 
 .card button {
@@ -95,8 +154,15 @@ header a {
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.card button:hover {
+    background-color: #f4b400;
+    transform: scale(1.05);
+}
+
+/* Planos VIP */
 .vip-plans {
     background-color: #1a1a1a;
     padding: 70px 20px;
@@ -104,8 +170,9 @@ header a {
 }
 
 .vip-plans h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .vip-cards {
@@ -118,8 +185,8 @@ header a {
 
 .vip-card {
     background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 15px;
     color: #d4af37;
     text-align: center;
     width: 280px;
@@ -127,31 +194,46 @@ header a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vip-card:hover {
+    transform: translateY(-10px); /* Levanta o card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .vip-card h3, .vip-card p {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .vip-card button {
     background-color: #d4af37;
     color: #000;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     width: 100%;
     font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.vip-card button:hover {
+    background-color: #f4b400;
+    transform: scale(1.05);
+}
+
+/* Rodapé */
 footer {
     background-color: #1a1a1a;
     color: #d4af37;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 20px;
     position: relative;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra superior no rodapé */
 }
 
 .footer-content {
@@ -162,7 +244,7 @@ footer {
 .footer-links a {
     color: #d4af37;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .footer-links a:hover {
@@ -173,7 +255,7 @@ footer {
 
 @media screen and (max-width: 1200px) {
     .cards {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .card {
@@ -183,8 +265,20 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        padding: 10px 30px;
+    }
+
+    .logo {
+        font-size: 22px; /* Reduz a logo */
+    }
+
+    nav a {
+        font-size: 16px; /* Ajusta o tamanho da fonte da navegação */
+    }
+
     .cards {
-        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+        grid-template-columns: 1fr;
     }
 
     .card {
@@ -193,39 +287,48 @@ footer {
     }
 
     .vip-cards {
-        flex-direction: column; /* Coloca os planos VIP em uma coluna */
+        flex-direction: column;
         gap: 20px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .hero h1 {
-        font-size: 2em; /* Ajusta o tamanho do título na tela pequena */
+        font-size: 2em;
     }
 
     .hero button {
-        font-size: 16px; /* Ajusta o tamanho do botão */
+        font-size: 16px;
     }
 
     .footer-content {
-        font-size: 14px; /* Diminui a fonte do footer */
+        font-size: 14px;
     }
 
     .vip-card {
         width: 90%;
         margin: 10px auto;
     }
+
+    header .logo {
+        font-size: 18px; /* Logo ainda menor em telas pequenas */
+    }
+
+    nav a {
+        font-size: 14px; /* Fonte da navegação reduzida */
+    }
 }
-/* Estilos para o Modal */
+
+/* Modal */
 .modal {
-    display: none; /* Inicialmente invisível */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -234,25 +337,26 @@ footer {
 .modal-content {
     background-color: #1a1a1a;
     color: #d4af37;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 15px;
     width: 80%;
     max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .modal-content h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 .modal-content p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 20px;
 }
 
 .close {
     color: #d4af37;
-    font-size: 2em;
+    font-size: 2.5em;
     cursor: pointer;
     position: absolute;
     top: 10px;
@@ -261,4 +365,50 @@ footer {
 
 .close:hover {
     color: #fff;
+}
+
+/* Estilos para o Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #d4af37;
+    border-radius: 10px;
+}
+
+/* Menus escondidos em telas menores */
+@media screen and (max-width: 768px) {
+    nav {
+        display: none; /* Esconde os links do menu */
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Exibe o botão de menu hambúrguer */
+    .menu-toggle {
+        display: flex;
+    }
+
+    header .logo.active {
+        display: none;  /* Isso fará a logo desaparecer */
+    }
+
+    nav.active {
+        display: flex; /* Exibe os links de navegação quando ativado */
+        flex-direction: column; /* Alinha os itens na vertical */
+        gap: 15px; /* Espaçamento entre os itens */
+        margin-top: 20px; /* Espaço no topo */
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 20px;
+    }
 }
