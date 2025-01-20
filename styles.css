@@ -414,3 +414,11 @@ footer {
         font-size: 20px;
     }
 }
+
+.vip-card ul{
+    list-style-type: none; /* Remove marcadores padrão */
+    padding: 0;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+}
+
