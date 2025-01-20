@@ -10,7 +10,7 @@ html, body {
 /* Estilos gerais do formulário */
 .contact {
     padding: 80px 20px; /* Diminuindo o padding superior para otimizar o espaço */
-    background-color: #1a1a1a;
+    background-color: #25182E;
     text-align: center;
 }
 
@@ -35,7 +35,7 @@ html, body {
 
 /* Estilo do formulário */
 form {
-    background-color: #333;
+    background-color: #25182E;
     padding: 30px;
     border-radius: 10px;
     display: inline-block;
